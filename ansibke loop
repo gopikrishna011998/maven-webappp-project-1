@@ -14,7 +14,7 @@
         - unzip
         - net-tools
       when: ansible_distribution == "Ubuntu" and
-            ansible_distribution_version == "22.o4"
+            ansible_distribution_version == "22.04"
     - name Installing httpd on AWSAMI #sudo yum install httpd -y
       yum:
         name:  '{{ item }}'
