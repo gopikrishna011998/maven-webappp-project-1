@@ -1,5 +1,5 @@
 - name: Install httpd 
-  hosts: webserevers
+  hosts: webservers
   become: true
   tasks:
     - name: Install httpd
