@@ -1,0 +1,17 @@
+- name: Install the required packages
+  hosts: localhost
+  become: true
+  tasks:
+    - name: Install apache2
+      apt:
+        name:  '{{ item }}'
+        state: present
+      loop:
+        - apache2
+        - git
+        - maven
+        - tree
+        - unzip
+        - net-tools
+          
+        
