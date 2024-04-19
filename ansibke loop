@@ -13,5 +13,18 @@
         - tree
         - unzip
         - net-tools
-          
+      when: ansible_distribuation == "Ubuntu" and
+            ansible_distribuation_version == "22.o4"
+    - name Installing httpd on AWSAMI #sudo yum install httpd -y
+      yum:
+        name:  '{{ item }}'
+        state: present
+      loop:
+        - httpd
+        - git
+        - maven
+        - tree
+      when: ansible_facts['distribution'] == "Amazon" and
+            ansible_facts['distribution_major-version'] == "2023"               
+
         
